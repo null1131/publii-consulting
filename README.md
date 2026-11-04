@@ -1,47 +1,27 @@
-# Publii Blank Theme
+# Barlow Business — Publii theme
 
-Version: 2.0.0.0
+A Publii-first business theme for consulting firms and professional services sites. Homepage copy and sections are authored in Publii, not embedded in the theme templates.
 
-The Blank is a clean and minimalistic Publii boilerplate theme that is perfect for users who want to start the adventure of creating Publi themes, having everything you need to create your own site.
+## Build your homepage in Publii
 
-**Download:** [blank.zip](https://cdn.getpublii.com/themes/blank_2.0.0.0.zip)
+1. Create a **Page** in Publii and edit it with the **Block editor**. Use normal headings, paragraphs, images, columns, buttons, lists, and other blocks to create the hero, about, services, testimonials, and contact sections you need.
+2. In **Site settings → Advanced options → SEO**, enable **Use a page as the frontpage** and choose that page. Publii will render the selected page through `page.hbs`; the theme outputs its editable body with `{{{text}}}`.
+3. Build your navigation in Publii’s **Menus** settings and assign it to Main menu and, optionally, Footer menu.
+4. Configure shared details in **Theme → Custom settings**: header CTA, contact email/phone/location, footer note, blog sidebar, and font size. Set the site name and logo in Publii’s site/theme settings.
+5. Create ordinary pages such as About, Services, and Contact in Pages. Their content uses the same block editor and business-style page layout.
 
+## Posts and news
 
-### Getting Started with Blank theme
+When the site is using a posts-listing homepage instead of a static frontpage, `index.hbs` displays recent posts. You can also set a posts prefix in Publii to keep news separate from a page-based homepage. Post titles, featured images, excerpts, and article bodies remain editable in Publii.
 
-1. Download the blank.zip theme package
-2. Open Publii and navigate to the Themes by clicking on the three dots in the top-right of the Publii interface to open the submenu, then clicking the Themes option
-3. Drag and drop the downloaded blank.zip package onto the themes section; Publii will automatically unpack and add the downloaded theme to its library.
-4. Now the Blank theme will be available in the Site Settings on the drop-down list.
+## Theme structure
 
-### Changelog
+- `page.hbs` — editable page and selected static-frontpage layout.
+- `index.hbs` — editable Publii posts listing, with latest posts and pagination.
+- `post.hbs` — individual post layout.
+- `partials/navbar.hbs` / `partials/footer.hbs` — Publii-managed menus and configurable shared details.
+- `assets/css/main.css` — responsive business styling for Publii content and editor-generated blocks.
 
-Commits on Aug 17, 2024  
-**feat:** Added support for Pages ver. 2.0.0.0  
+## Theme development
 
-Commits on Jul 11, 2022  
-**feat:** updated to support search and comments plugins, also Cookie banner  
-
-Commits on Nov 14, 2021  
-**fix:** Updated Avatar markup  
-
-Commits on Mar 31, 2021  
-**fix:** end tags `</body></html>` added to footer  
-
-
-### Author:
-
-Bob Mitro TidyCustoms ([@tidycustoms](http://twitter.com/tidycustoms) - [https://tidycustoms.net/](https://tidycustoms.net/))
-
-
-### Documentation
-
-Dev documentation is available at [https://getpublii.com/dev/](https://getpublii.com/dev/)
-
-
-
-### License
-
-MIT
-
-
+The theme retains Publii’s standard templates, responsive image support, search/comments integrations, page and tag/author support, and custom HTML injection points. For developer details, see [Publii’s theme documentation](https://getpublii.com/dev/).

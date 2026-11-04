@@ -1,22 +1,23 @@
-<footer>
-
-   {{! checks if any menu is assigned to the Footer menu position }}
-   {{#if menus.footerMenu}}
-      {{> menu menus.footerMenu}}
-   {{/if}}
-   {{! /checks if any menu is assigned to the Footer menu position }}
-   
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+            <a class="site-logo site-logo--footer" href="{{@website.url}}">
+                <span class="site-logo__mark" aria-hidden="true">{{@website.name.[0]}}</span>
+                <span class="site-logo__text"><strong>{{@website.name}}</strong><small>Business &amp; consulting</small></span>
+            </a>
+            {{#if @config.custom.footerNote}}<p class="site-footer__note">{{@config.custom.footerNote}}</p>{{/if}}
+            <p class="site-footer__copyright">&copy; {{@website.name}}</p>
+        </div>
+        {{#if menus.footerMenu}}<div class="site-footer__links">{{> menu menus.footerMenu}}</div>{{/if}}
+        <div class="site-footer__contact">
+            {{#if @config.custom.contactEmail}}<a href="mailto:{{@config.custom.contactEmail}}">{{@config.custom.contactEmail}}</a>{{/if}}
+            {{#if @config.custom.contactPhone}}<a href="tel:{{@config.custom.contactPhone}}">{{@config.custom.contactPhone}}</a>{{/if}}
+            {{#if @config.custom.contactLocation}}<span>{{@config.custom.contactLocation}}</span>{{/if}}
+        </div>
+    </div>
 </footer>
-
 <script async src="{{js "scripts.js"}}"></script>
-
-{{! code injection by a Custom HTML tool }}
-   {{{@footerCustomCode}}}
-{{! /code injection by a Custom HTML tool }}
-
-{{! helper for creating footer output with Publii-related tags. Currently used for GDPR cookies popup }}
-   {{{ publiiFooter }}}
-{{! /helper for creating footer output with Publii-related tags. Currently used for GDPR cookies popup }}
-
+{{{ @footerCustomCode }}}
+{{{ publiiFooter }}}
 </body>
 </html>

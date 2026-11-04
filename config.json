@@ -1,7 +1,7 @@
 {
-    "name": "Blank",
-    "version": "2.0.0.0",
-    "author": "TidyCustoms <https://tidycustoms.net/>",
+    "name": "Barlow Business",
+    "version": "2.1.0.0",
+    "author": "null1131 <https://barlow.pw/>",
     "renderer": {
         "relatedPostsNumber": 3,
         "renderRelatedPosts": true,
@@ -35,7 +35,7 @@
         "authorImages": true,
         "searchPage": true,
         "errorPage": true,
-        "customSearch": true, 
+        "customSearch": true,
         "customComments": true,
         "embedConsents": true,
         "pages": true
@@ -45,348 +45,46 @@
         "footerMenu": "Footer menu"
     },
     "config": [
-        {
-            "name": "postsPerPage",
-            "label": "Posts per page",
-            "value": 12,
-            "type": "number"
-        },
-        {
-            "name": "tagsPostsPerPage",
-            "label": "Tags posts per page",
-            "value": 12,
-            "type": "number"
-        },
-        {
-            "name": "authorsPostsPerPage",
-            "label": "Authors posts per page",
-            "value": 12,
-            "type": "number"
-        },
-        {
-            "name": "excerptLength",
-            "label": "Excerpt length",
-            "value": 25,
-            "type": "number"
-        },
-        {
-            "name": "logo",
-            "label": "Website logo",
-            "value": "",
-            "type": "upload",
-            "upload": true
-        }
+        { "name": "postsPerPage", "label": "Posts per page", "value": 6, "type": "number" },
+        { "name": "tagsPostsPerPage", "label": "Tags posts per page", "value": 6, "type": "number" },
+        { "name": "authorsPostsPerPage", "label": "Authors posts per page", "value": 6, "type": "number" },
+        { "name": "excerptLength", "label": "Excerpt length", "value": 28, "type": "number" },
+        { "name": "logo", "label": "Website logo", "value": "", "type": "upload", "upload": true }
     ],
     "customConfig": [
-        {
-            "name": "mainWidth",
-            "label": "Main width",
-            "group": "Layout",
-            "value": "860px",
-            "type": "text"
-        },
-        {
-            "name": "sidebarWidth",
-            "label": "Sidebar width",
-            "group": "Layout",
-            "value": "300px",
-            "type": "text"
-        },
-        {
-            "name": "separator",
-            "type": "separator",
-            "label": "Selected Posts",
-            "group": "Sidebar",
-            "size": "small"
-        },
-        {
-            "name": "selectedPosts",
-            "label": "Source",
-            "group": "Sidebar",
-            "note": "Display posts from the specified tag",
-            "value": "",
-            "type": "tags-dropdown"
-        },
-        {
-            "name": "amountSelectedtPosts",
-            "label": "Number of posts",
-            "group": "Sidebar",
-            "value": "3",
-            "type": "text"
-        },
-        {
-            "name": "separator",
-            "type": "separator",
-            "label": "Authors",
-            "group": "Sidebar",
-            "size": "big"
-        },
-        {
-            "name": "authors",
-            "label": "On / Off",
-            "group": "Sidebar",
-            "note": "Enable or disable the authors section",
-            "value": true,
-            "type": "checkbox"
-        },
-        {
-            "name": "authorsNumber",
-            "label": "Number of authors",
-            "group": "Sidebar",
-            "value": "5",
-            "type": "range",
-            "min": 1,
-            "max": 10,
-            "step": 1
-        },
-        {
-            "name": "fontSize",
-            "label": "Font size",
-            "group": "Fonts",
-            "note": "The font-size of the root element in REM unit",
-            "value": "1",
-            "type": "range",
-            "min": 1,
-            "max": 3,
-            "step": 0.05
-        },
-        {
-            "name": "faviconUpload",
-            "label": "Upload favicon file",
-            "group": "Additional",
-            "note": "The ideal size of a favicon is 16x16 pixels. Save your favicon as either favicon.png or favicon.ico",
-            "value": "",
-            "type": "smallupload",
-            "upload": true
-        },
-        {
-            "name": "faviconExtension",
-            "label": "Favicon extension",
-            "group": "Additional",
-            "value": "image/x-icon",
-            "type": "select",
-            "options": [
-                {
-                    "label": ".ico",
-                    "value": "image/x-icon"
-                },
-                {
-                    "label": ".png",
-                    "value": "image/png"
-                }
-            ]
-        }
+        { "name": "mainWidth", "label": "Content width", "group": "Layout", "value": "1180px", "type": "text" },
+        { "name": "sidebarWidth", "label": "Sidebar width", "group": "Layout", "value": "300px", "type": "text" },
+        { "name": "showSidebar", "label": "Show blog sidebar", "group": "Layout", "value": false, "type": "checkbox" },
+        { "name": "separator", "type": "separator", "label": "Header call to action", "group": "Business details", "size": "small" },
+        { "name": "headerCtaLabel", "label": "Button label", "group": "Business details", "value": "", "type": "text" },
+        { "name": "headerCtaUrl", "label": "Button link", "group": "Business details", "value": "", "type": "text" },
+        { "name": "separator", "type": "separator", "label": "Contact details", "group": "Business details", "size": "small" },
+        { "name": "contactEmail", "label": "Email address", "group": "Business details", "value": "", "type": "text" },
+        { "name": "contactPhone", "label": "Phone number", "group": "Business details", "value": "", "type": "text" },
+        { "name": "contactLocation", "label": "Location", "group": "Business details", "value": "", "type": "text" },
+        { "name": "footerNote", "label": "Footer note", "group": "Business details", "value": "", "type": "text" },
+        { "name": "fontSize", "label": "Base font size", "group": "Typography", "note": "Root font-size in REM", "value": "1", "type": "range", "min": 0.9, "max": 1.25, "step": 0.05 }
     ],
-    "authorConfig": [
-        {
-            "name": "displayPostCounter",
-            "label": "Display post counter",
-            "value": 1,
-            "type": "select",
-            "options": [
-                {
-                    "label": "Enabled",
-                    "value": 1
-                },
-                {
-                    "label": "Disabled",
-                    "value": 0
-                }
-            ]
-        }
-    ],
+    "authorConfig": [],
     "postConfig": [
-        {
-            "name": "displayAuthorBio",
-            "label": "Display author bio",
-            "value": 1,
-            "type": "select",
-            "options": [
-                {
-                    "label": "Enabled",
-                    "value": 1
-                },
-                {
-                    "label": "Disabled",
-                    "value": 0
-                }
-            ]
-        }
+        { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
     ],
     "pageConfig": [
-        {
-            "name": "displayAuthorBio",
-            "label": "Display author bio",
-            "value": 1,
-            "type": "select",
-            "options": [
-                {
-                    "label": "Enabled",
-                    "value": 1
-                },
-                {
-                    "label": "Disabled",
-                    "value": 0
-                }
-            ]
-        },
-        {
-            "name": "displayChildPages",
-            "label": "Display child pages",
-            "value": 0,
-            "type": "select",
-            "options": [
-                {
-                    "label": "Enabled",
-                    "value": 1
-                },
-                {
-                    "label": "Disabled",
-                    "value": 0
-                }
-            ]
-        }
+        { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
+        { "name": "displayChildPages", "label": "Display child pages", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
     ],
-    "tagConfig": [
-        {
-            "name": "displayPostCounter",
-            "label": "Display post counter",
-            "value": 1,
-            "type": "select",
-            "options": [
-                {
-                    "label": "Enabled",
-                    "value": 1
-                },
-                {
-                    "label": "Disabled",
-                    "value": 0
-                }
-            ]
-        }
-    ],
+    "tagConfig": [],
     "files": {
-        "ignoreAssets": [
-            "scss",
-            ".DS_Store"
-        ],
+        "ignoreAssets": ["scss", ".DS_Store"],
         "assetsPath": "assets",
         "partialsPath": "partials",
         "responsiveImages": {
-            "contentImages": {
-                "sizes": "(max-width: 1200px) 100vw, 1200px",
-                "dimensions": {
-                    "xs": {
-                        "width": 300,
-                        "height": "auto"
-                    },
-                    "sm": {
-                        "width": 480,
-                        "height": "auto"
-                    },
-                    "md": {
-                        "width": 749,
-                        "height": "auto"
-                    },
-                    "xl": {
-                        "width": 1200,
-                        "height": "auto"
-                    }
-                }
-            },
-            "featuredImages": {
-                "sizes": "(max-width: 1200px) 100vw, 1200px",
-                "dimensions": {
-                    "xs": {
-                        "width": 300,
-                        "height": 200
-                    },
-                    "sm": {
-                        "width": 480,
-                        "height": "auto"
-                    },
-                    "md": {
-                        "width": 749,
-                        "height": "auto"
-                    },
-                    "xl": {
-                        "width": 1200,
-                        "height": "auto"
-                    }
-                }
-            },
-            "tagImages": {
-                "sizes": "(max-width: 1200px) 100vw, 1200px",
-                "dimensions": {
-                    "xs": {
-                        "width": 300,
-                        "height": 200
-                    },
-                    "sm": {
-                        "width": 480,
-                        "height": "auto"
-                    },
-                    "md": {
-                        "width": 749,
-                        "height": "auto"
-                    },
-                    "xl": {
-                        "width": 1200,
-                        "height": "auto"
-                    }
-                }
-            },
-            "authorImages": {
-                "sizes": "(max-width: 1200px) 100vw, 1200px",
-                "dimensions": {
-                    "xs": {
-                        "width": 300,
-                        "height": 200
-                    },
-                    "sm": {
-                        "width": 480,
-                        "height": "auto"
-                    },
-                    "md": {
-                        "width": 749,
-                        "height": "auto"
-                    },
-                    "xl": {
-                        "width": 1200,
-                        "height": "auto"
-                    }
-                }
-            },
-            "optionImages": {
-                "sizes": "(max-width: 1200px) 100vw, 1200px",
-                "dimensions": {
-                    "xs": {
-                        "width": 300,
-                        "height": 200
-                    },
-                    "sm": {
-                        "width": 480,
-                        "height": "auto"
-                    },
-                    "md": {
-                        "width": 749,
-                        "height": "auto"
-                    },
-                    "xl": {
-                        "width": 1200,
-                        "height": "auto"
-                    }
-                }
-            },
-            "galleryImages": {
-                "sizes": "",
-                "dimensions": {
-                    "thumbnail": {
-                        "width": 720,
-                        "height": "auto"
-                    }
-                }
-            }
+            "contentImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": "auto" }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+            "featuredImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+            "tagImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+            "authorImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+            "optionImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+            "galleryImages": { "sizes": "", "dimensions": { "thumbnail": { "width": 720, "height": "auto" } } }
         }
     }
 }
