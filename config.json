@@ -1,90 +1,108 @@
 {
-    "name": "Barlow Business",
-    "version": "2.1.1.0",
-    "author": "null1131 <https://barlow.pw/>",
-    "renderer": {
-        "relatedPostsNumber": 3,
-        "renderRelatedPosts": true,
-        "renderSimilarPosts": false,
-        "renderPrevNextPosts": true,
-        "createContentStructure": true,
-        "includeFeaturedInPosts": true,
-        "tagsIncludeFeaturedInPosts": true,
-        "authorsIncludeFeaturedInPosts": true,
-        "featuredPostsNumber": 0,
-        "tagsFeaturedPostsNumber": 0,
-        "authorsFeaturedPostsNumber": 0,
-        "createTagPages": true,
-        "createAuthorPages": true,
-        "createTagsList": true,
-        "create404page": true,
-        "createSearchPage": true,
-        "customHTML": {
-            "beforePost": "Before every post",
-            "afterPost": "After every post",
-            "beforePage": "Before every page",
-            "afterPage": "After every page"
-        }
-    },
-    "supportedFeatures": {
-        "blockEditor": true,
-        "tagsList": true,
-        "tagPages": true,
-        "tagImages": true,
-        "authorPages": true,
-        "authorImages": true,
-        "searchPage": true,
-        "errorPage": true,
-        "customSearch": true,
-        "customComments": true,
-        "embedConsents": true,
-        "pages": true
-    },
-    "menus": {
-        "mainMenu": "Main menu",
-        "footerMenu": "Footer menu"
-    },
-    "config": [
-        { "name": "postsPerPage", "label": "Posts per page", "value": 6, "type": "number" },
-        { "name": "tagsPostsPerPage", "label": "Tags posts per page", "value": 6, "type": "number" },
-        { "name": "authorsPostsPerPage", "label": "Authors posts per page", "value": 6, "type": "number" },
-        { "name": "excerptLength", "label": "Excerpt length", "value": 28, "type": "number" },
-        { "name": "logo", "label": "Website logo", "value": "", "type": "upload", "upload": true }
-    ],
-    "customConfig": [
-        { "name": "mainWidth", "label": "Content width", "group": "Layout", "value": "1180px", "type": "text" },
-        { "name": "sidebarWidth", "label": "Sidebar width", "group": "Layout", "value": "300px", "type": "text" },
-        { "name": "showSidebar", "label": "Show blog sidebar", "group": "Layout", "value": false, "type": "checkbox" },
-        { "name": "separator", "type": "separator", "label": "Header call to action", "group": "Business details", "size": "small" },
-        { "name": "headerCtaLabel", "label": "Button label", "group": "Business details", "value": "", "type": "text" },
-        { "name": "headerCtaUrl", "label": "Button link", "group": "Business details", "value": "", "type": "text" },
-        { "name": "separator", "type": "separator", "label": "Contact details", "group": "Business details", "size": "small" },
-        { "name": "contactEmail", "label": "Email address", "group": "Business details", "value": "", "type": "text" },
-        { "name": "contactPhone", "label": "Phone number", "group": "Business details", "value": "", "type": "text" },
-        { "name": "contactLocation", "label": "Location", "group": "Business details", "value": "", "type": "text" },
-        { "name": "footerNote", "label": "Footer note", "group": "Business details", "value": "", "type": "text" },
-        { "name": "fontSize", "label": "Base font size", "group": "Typography", "note": "Root font-size in REM", "value": "1", "type": "range", "min": 0.9, "max": 1.25, "step": 0.05 }
-    ],
-    "authorConfig": [],
-    "postConfig": [
-        { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
-    ],
-    "pageConfig": [
-        { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
-        { "name": "displayChildPages", "label": "Display child pages", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
-    ],
-    "tagConfig": [],
-    "files": {
-        "ignoreAssets": ["scss", ".DS_Store"],
-        "assetsPath": "assets",
-        "partialsPath": "partials",
-        "responsiveImages": {
-            "contentImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": "auto" }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
-            "featuredImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
-            "tagImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
-            "authorImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
-            "optionImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
-            "galleryImages": { "sizes": "", "dimensions": { "thumbnail": { "width": 720, "height": "auto" } } }
-        }
+  "name": "Barlow Business",
+  "version": "2.1.2.0",
+  "author": "null1131 <https://barlow.pw/>",
+  "renderer": {
+    "relatedPostsNumber": 3,
+    "renderRelatedPosts": true,
+    "renderSimilarPosts": false,
+    "renderPrevNextPosts": true,
+    "createContentStructure": true,
+    "includeFeaturedInPosts": true,
+    "tagsIncludeFeaturedInPosts": true,
+    "authorsIncludeFeaturedInPosts": true,
+    "featuredPostsNumber": 0,
+    "tagsFeaturedPostsNumber": 0,
+    "authorsFeaturedPostsNumber": 0,
+    "createTagPages": true,
+    "createAuthorPages": true,
+    "createTagsList": true,
+    "create404page": true,
+    "createSearchPage": true,
+    "customHTML": {
+      "beforePost": "Before every post",
+      "afterPost": "After every post",
+      "beforePage": "Before every page",
+      "afterPage": "After every page"
     }
+  },
+  "supportedFeatures": {
+    "blockEditor": true,
+    "tagsList": true,
+    "tagPages": true,
+    "tagImages": true,
+    "authorPages": true,
+    "authorImages": true,
+    "searchPage": true,
+    "errorPage": true,
+    "customSearch": true,
+    "customComments": true,
+    "embedConsents": true,
+    "pages": true
+  },
+  "menus": {
+    "mainMenu": "Main menu",
+    "footerMenu": "Footer menu"
+  },
+  "config": [
+    { "name": "postsPerPage", "label": "Posts per page", "value": 6, "type": "number" },
+    { "name": "tagsPostsPerPage", "label": "Tags posts per page", "value": 6, "type": "number" },
+    { "name": "authorsPostsPerPage", "label": "Authors posts per page", "value": 6, "type": "number" },
+    { "name": "excerptLength", "label": "Excerpt length", "value": 28, "type": "number" },
+    { "name": "logo", "label": "Website logo", "value": "", "type": "upload", "upload": true }
+  ],
+  "customConfig": [
+    { "name": "mainWidth", "label": "Content width", "group": "Layout", "value": "1180px", "type": "text" },
+    { "name": "sidebarWidth", "label": "Sidebar width", "group": "Layout", "value": "300px", "type": "text" },
+    { "name": "showSidebar", "label": "Show blog sidebar", "group": "Layout", "value": false, "type": "checkbox" },
+    { "name": "separator", "type": "separator", "label": "Header call to action", "group": "Business details", "size": "small" },
+    { "name": "headerCtaLabel", "label": "Button label", "group": "Business details", "value": "", "type": "text" },
+    { "name": "headerCtaUrl", "label": "Button link", "group": "Business details", "value": "", "type": "text" },
+    { "name": "separator", "type": "separator", "label": "Contact details", "group": "Business details", "size": "small" },
+    { "name": "contactEmail", "label": "Email address", "group": "Business details", "value": "", "type": "text" },
+    { "name": "contactPhone", "label": "Phone number", "group": "Business details", "value": "", "type": "text" },
+    { "name": "contactLocation", "label": "Location", "group": "Business details", "value": "", "type": "text" },
+    { "name": "footerNote", "label": "Footer note", "group": "Business details", "value": "", "type": "text" },
+    { "name": "fontSize", "label": "Base font size", "group": "Typography", "note": "Root font-size in REM", "value": "1", "type": "range", "min": 0.9, "max": 1.25, "step": 0.05 }
+  ],
+  "authorConfig": [],
+  "postConfig": [
+    { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
+  ],
+  "pageConfig": [
+    { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
+    { "name": "displayChildPages", "label": "Display child pages", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
+  ],
+  "tagConfig": [],
+  "files": {
+    "ignoreAssets": ["scss", ".DS_Store"],
+    "assetsPath": "assets",
+    "partialsPath": "partials",
+    "responsiveImages": {
+      "contentImages": {
+        "sizes": "(max-width: 1200px) 100vw, 1200px",
+        "dimensions": { "xs": { "width": 300, "height": "auto" }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
+      },
+      "featuredImages": {
+        "sizes": "(max-width: 1200px) 100vw, 1200px",
+        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
+      },
+      "tagImages": {
+        "sizes": "(max-width: 1200px) 100vw, 1200px",
+        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
+      },
+      "authorImages": {
+        "sizes": "(max-width: 1200px) 100vw, 1200px",
+        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
+      },
+      "optionImages": {
+        "sizes": "(max-width: 1200px) 100vw, 1200px",
+        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
+      },
+      "galleryImages": {
+        "sizes": "",
+        "dimensions": { "thumbnail": { "width": 720, "height": "auto" } }
+      }
+    }
+  }
 }
