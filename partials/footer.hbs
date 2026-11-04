@@ -1,14 +1,18 @@
 <footer class="site-footer">
     <div class="container site-footer__inner">
         <div class="site-footer__brand">
-            <a class="site-logo site-logo--footer" href="{{@website.url}}">
-                <span class="site-logo__mark" aria-hidden="true">{{@website.name.[0]}}</span>
-                <span class="site-logo__text"><strong>{{@website.name}}</strong><small>Business &amp; consulting</small></span>
+            <a class="site-logo site-logo--footer" href="{{@website.url}}" aria-label="{{@website.name}} home">
+                {{#if @website.logo}}
+                    <img src="{{@website.logo}}" alt="{{@website.name}}" {{#if @website.logoSize.width}}width="{{@website.logoSize.width}}"{{/if}} {{#if @website.logoSize.height}}height="{{@website.logoSize.height}}"{{/if}}>
+                {{else}}
+                    <span class="site-logo__mark" aria-hidden="true">B</span>
+                    <span class="site-logo__text"><strong>{{@website.name}}</strong><small>Business &amp; consulting</small></span>
+                {{/if}}
             </a>
             {{#if @config.custom.footerNote}}<p class="site-footer__note">{{@config.custom.footerNote}}</p>{{/if}}
             <p class="site-footer__copyright">&copy; {{@website.name}}</p>
         </div>
-        {{#if menus.footerMenu}}<div class="site-footer__links">{{> menu menus.footerMenu}}</div>{{/if}}
+        {{#if menus.footerMenu}}<div class="site-footer__links">{{> menu-footer menus.footerMenu}}</div>{{/if}}
         <div class="site-footer__contact">
             {{#if @config.custom.contactEmail}}<a href="mailto:{{@config.custom.contactEmail}}">{{@config.custom.contactEmail}}</a>{{/if}}
             {{#if @config.custom.contactPhone}}<a href="tel:{{@config.custom.contactPhone}}">{{@config.custom.contactPhone}}</a>{{/if}}

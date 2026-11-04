@@ -2,13 +2,14 @@
     <div class="site-header__inner container">
         <a id="logo" class="site-logo" href="{{@website.url}}" aria-label="{{@website.name}} home">
             {{#if @website.logo}}
-                <img src="{{@website.logo}}" alt="{{@website.name}}">
+                <img src="{{@website.logo}}" alt="{{@website.name}}" {{#if @website.logoSize.width}}width="{{@website.logoSize.width}}"{{/if}} {{#if @website.logoSize.height}}height="{{@website.logoSize.height}}"{{/if}}>
             {{else}}
-                <span class="site-logo__mark" aria-hidden="true">{{@website.name.[0]}}</span>
+                <span class="site-logo__mark" aria-hidden="true">B</span>
                 <span class="site-logo__text"><strong>{{@website.name}}</strong><small>Business &amp; consulting</small></span>
             {{/if}}
         </a>
         {{#if menus.mainMenu}}{{> menu menus.mainMenu}}{{/if}}
+        {{{@customSearchInput}}}
         {{#if @config.custom.headerCtaLabel}}
             {{#if @config.custom.headerCtaUrl}}<a class="header-cta" href="{{@config.custom.headerCtaUrl}}">{{@config.custom.headerCtaLabel}} <span aria-hidden="true">&rarr;</span></a>{{/if}}
         {{/if}}

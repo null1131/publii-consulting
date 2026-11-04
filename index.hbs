@@ -3,22 +3,20 @@
 <main class="main {{#unless @config.custom.showSidebar}}main--full{{/unless}}">
     <header class="listing-header">
         <span class="eyebrow">{{@website.name}}</span>
-        <h1>Insights &amp; updates</h1>
+        <h1>{{#if @config.custom.postsHeading}}{{@config.custom.postsHeading}}{{else}}{{@website.name}}{{/if}}</h1>
     </header>
     <div class="post-grid">
         {{#each posts}}
             <article class="post-card">
-                {{#featuredImage}}
-                    {{#if url}}
-                        <a class="post-card__image" href="{{../url}}">
-                            <img src="{{url}}" alt="{{alt}}" width="{{width}}" height="{{height}}" {{#if @config.site.responsiveImages}}{{responsiveImageAttributes 'featuredImage' srcset sizes}}{{/if}} {{lazyload "lazy"}}>
-                        </a>
-                    {{/if}}
-                {{/featuredImage}}
+                {{#if @config.custom.showPostImages}}
+                    {{#featuredImage}}{{#if url}}<a class="post-card__image" href="{{../url}}"><img src="{{url}}" alt="{{alt}}" width="{{width}}" height="{{height}}" {{#if @config.site.responsiveImages}}{{responsiveImageAttributes 'featuredImage' srcset sizes}}{{/if}} {{lazyload "lazy"}}></a>{{/if}}{{/featuredImage}}
+                {{/if}}
                 <div class="post-card__body">
-                    <time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">{{date createdAt}}</time>
+                    {{#if @config.custom.showPostDates}}<time datetime="{{date createdAt 'YYYY-MM-DDTHH:mm'}}">{{date createdAt}}</time>{{/if}}
                     <h2><a href="{{url}}">{{title}}</a></h2>
+                    {{#if @config.custom.showPostAuthors}}{{#author}}<p class="post-card__byline"><a href="{{url}}">{{name}}</a></p>{{/author}}{{/if}}
                     {{#if hasCustomExcerpt}}{{{excerpt}}}{{else}}<p>{{{excerpt}}}</p>{{/if}}
+                    {{#if @config.custom.showPostTags}}{{#if mainTag}}<a class="post-card__tag" href="{{mainTag.url}}">{{mainTag.name}}</a>{{/if}}{{/if}}
                     <a class="text-link" href="{{url}}">Read more <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>

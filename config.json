@@ -1,6 +1,6 @@
 {
   "name": "Barlow Business",
-  "version": "2.1.2.0",
+  "version": "2.1.3.0",
   "author": "null1131 <https://barlow.pw/>",
   "renderer": {
     "relatedPostsNumber": 3,
@@ -41,8 +41,8 @@
     "pages": true
   },
   "menus": {
-    "mainMenu": "Main menu",
-    "footerMenu": "Footer menu"
+    "mainMenu": { "name": "Main menu", "maxLevels": -1 },
+    "footerMenu": { "name": "Footer menu", "maxLevels": 1 }
   },
   "config": [
     { "name": "postsPerPage", "label": "Posts per page", "value": 6, "type": "number" },
@@ -55,6 +55,11 @@
     { "name": "mainWidth", "label": "Content width", "group": "Layout", "value": "1180px", "type": "text" },
     { "name": "sidebarWidth", "label": "Sidebar width", "group": "Layout", "value": "300px", "type": "text" },
     { "name": "showSidebar", "label": "Show blog sidebar", "group": "Layout", "value": false, "type": "checkbox" },
+    { "name": "postsHeading", "label": "Posts page heading", "group": "Layout", "value": "Insights & updates", "type": "text" },
+    { "name": "showPostImages", "label": "Show featured images in post listings", "group": "Post list", "value": true, "type": "checkbox" },
+    { "name": "showPostAuthors", "label": "Show author names in post listings", "group": "Post list", "value": false, "type": "checkbox" },
+    { "name": "showPostDates", "label": "Show dates in post listings", "group": "Post list", "value": true, "type": "checkbox" },
+    { "name": "showPostTags", "label": "Show tags in post listings", "group": "Post list", "value": true, "type": "checkbox" },
     { "name": "separator", "type": "separator", "label": "Header call to action", "group": "Business details", "size": "small" },
     { "name": "headerCtaLabel", "label": "Button label", "group": "Business details", "value": "", "type": "text" },
     { "name": "headerCtaUrl", "label": "Button link", "group": "Business details", "value": "", "type": "text" },
@@ -63,46 +68,38 @@
     { "name": "contactPhone", "label": "Phone number", "group": "Business details", "value": "", "type": "text" },
     { "name": "contactLocation", "label": "Location", "group": "Business details", "value": "", "type": "text" },
     { "name": "footerNote", "label": "Footer note", "group": "Business details", "value": "", "type": "text" },
+    { "name": "faviconUpload", "label": "Favicon file", "group": "Additional", "value": "", "type": "smallupload", "upload": true },
+    { "name": "faviconExtension", "label": "Favicon MIME type", "group": "Additional", "value": "image/x-icon", "type": "select", "options": [{ "label": ".ico", "value": "image/x-icon" }, { "label": ".png", "value": "image/png" }] },
     { "name": "fontSize", "label": "Base font size", "group": "Typography", "note": "Root font-size in REM", "value": "1", "type": "range", "min": 0.9, "max": 1.25, "step": 0.05 }
   ],
-  "authorConfig": [],
+  "authorConfig": [
+    { "name": "displayPostCounter", "label": "Display post counter", "value": 1, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
+  ],
   "postConfig": [
+    { "name": "displayAuthor", "label": "Display author", "value": 1, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
+    { "name": "displayDate", "label": "Display date", "value": 1, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
     { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
   ],
   "pageConfig": [
+    { "name": "displayDate", "label": "Display date", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
+    { "name": "displayAuthor", "label": "Display author", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
     { "name": "displayAuthorBio", "label": "Display author bio", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] },
     { "name": "displayChildPages", "label": "Display child pages", "value": 0, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
   ],
-  "tagConfig": [],
+  "tagConfig": [
+    { "name": "displayPostCounter", "label": "Display post counter", "value": 1, "type": "select", "options": [{ "label": "Enabled", "value": 1 }, { "label": "Disabled", "value": 0 }] }
+  ],
   "files": {
     "ignoreAssets": ["scss", ".DS_Store"],
     "assetsPath": "assets",
     "partialsPath": "partials",
     "responsiveImages": {
-      "contentImages": {
-        "sizes": "(max-width: 1200px) 100vw, 1200px",
-        "dimensions": { "xs": { "width": 300, "height": "auto" }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
-      },
-      "featuredImages": {
-        "sizes": "(max-width: 1200px) 100vw, 1200px",
-        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
-      },
-      "tagImages": {
-        "sizes": "(max-width: 1200px) 100vw, 1200px",
-        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
-      },
-      "authorImages": {
-        "sizes": "(max-width: 1200px) 100vw, 1200px",
-        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
-      },
-      "optionImages": {
-        "sizes": "(max-width: 1200px) 100vw, 1200px",
-        "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } }
-      },
-      "galleryImages": {
-        "sizes": "",
-        "dimensions": { "thumbnail": { "width": 720, "height": "auto" } }
-      }
+      "contentImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": "auto" }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+      "featuredImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+      "tagImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+      "authorImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+      "optionImages": { "sizes": "(max-width: 1200px) 100vw, 1200px", "dimensions": { "xs": { "width": 300, "height": 200 }, "sm": { "width": 480, "height": "auto" }, "md": { "width": 749, "height": "auto" }, "xl": { "width": 1200, "height": "auto" } } },
+      "galleryImages": { "sizes": "", "dimensions": { "thumbnail": { "width": 720, "height": "auto" } } }
     }
   }
 }

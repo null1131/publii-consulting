@@ -1,0 +1,13 @@
+<nav class="menu menu--footer" aria-label="Footer navigation">
+    <ul class="menu__list">
+        {{#each items}}
+            <li{{menuItemClasses}}>
+                {{#if link}}
+                    <a href="{{menuUrl}}" {{#if title}}title="{{title}}"{{/if}} {{#if target}}target="{{target}}"{{/if}} {{#if rel}}rel="{{rel}}"{{/if}}>{{label}}</a>
+                {{else}}
+                    <span>{{label}}</span>
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+</nav>
