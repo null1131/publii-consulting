@@ -1,0 +1,37 @@
+{{> head}}
+{{> navbar}}
+<main class="business-home">
+    {{#if @customHTML.beforePage}}
+        <div class="custom-html custom-html--before-page"><div class="container">{{{@customHTML.beforePage}}}</div></div>
+    {{/if}}
+
+    {{#page}}
+        <article class="business-home__page">
+            <header class="business-hero">
+                <div class="container business-hero__inner">
+                    {{#if @website.description}}<p class="business-hero__eyebrow">{{@website.description}}</p>{{/if}}
+                    <h1>{{title}}</h1>
+                    {{#if featuredImage}}
+                        {{#if featuredImage.url}}
+                            <figure class="business-hero__image">
+                                <img src="{{featuredImage.url}}" alt="{{featuredImage.alt}}" width="{{featuredImage.width}}" height="{{featuredImage.height}}" {{#if @config.site.responsiveImages}}{{responsiveImageAttributes 'featuredImage' srcset sizes}}{{/if}} {{lazyload "eager"}}>
+                                {{#checkIfAny featuredImage.caption featuredImage.credits}}<figcaption>{{featuredImage.caption}} {{featuredImage.credits}}</figcaption>{{/checkIfAny}}
+                            </figure>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </header>
+
+            <div class="business-home__content entry-content">
+                <div class="container">
+                    {{{text}}}
+                </div>
+            </div>
+        </article>
+    {{/page}}
+
+    {{#if @customHTML.afterPage}}
+        <div class="custom-html custom-html--after-page"><div class="container">{{{@customHTML.afterPage}}}</div></div>
+    {{/if}}
+</main>
+{{> footer}}

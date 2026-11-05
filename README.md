@@ -1,32 +1,30 @@
 # Barlow Business — Publii theme
 
-A Publii-first business theme for consulting firms and professional services sites. Homepage copy and sections are authored in Publii, not embedded in the theme templates.
+A Publii-first business theme for consulting firms and professional services websites. The design is inspired by the clean, configurable structure of Publii Technews and adapted for Barlow Consulting; homepage copy and sections remain editable in Publii rather than hard-coded in templates.
 
-## Build your homepage in Publii
+## Set up the business homepage
 
-1. Create a **Page** in Publii and edit it with the **Block editor**. Use normal headings, paragraphs, images, columns, buttons, lists, and other blocks to create the hero, about, services, testimonials, and contact sections you need.
-2. In **Site settings → Advanced options → SEO**, enable **Use a page as the frontpage** and choose that page. Publii renders the selected page through `page.hbs`; the theme outputs its editable body with `{{{text}}}`.
-3. Build your navigation in Publii’s **Menus** settings and assign it to Main menu and, optionally, Footer menu.
-4. Configure shared details in **Theme → Custom settings**: header CTA, contact email/phone/location, footer note, blog sidebar, and font size. Set the site name and logo in Publii’s site/theme settings.
-5. Create ordinary pages such as About, Services, and Contact in Pages. Their content uses the same block editor and business-style page layout.
+1. Create a Page named **Home** and use Publii’s Block editor to add the content: a short hero lead, an About section, a two-column capabilities/services section, optional project highlights, and a Contact section. Use headings, paragraphs, Columns, Group, Image, and Buttons blocks so all copy and images are editable in Publii.
+2. In the page editor’s template selector, choose **Business homepage**. This presents the Publii page title/featured image as the hero and renders the page’s block content below it.
+3. In **Site settings → Advanced options → SEO**, enable **Use a page as the frontpage** and select Home.
+4. In **Theme → Basic settings**, upload the Barlow logo in **Site logo for header and footer**. The theme uses Publii’s `@website.logo` and `@website.logoSize` values; if no image is configured, it displays a simple text fallback.
+5. Edit the **Main menu** and **Footer menu** in Publii’s Menus area. The theme renders those assigned Publii menus; it does not invent About/Capabilities/Contact links or static anchors.
+6. Configure the header CTA, shared contact details, favicon, sidebar, and post listing controls in **Theme → Custom settings**.
 
-## Posts and news
+## What the theme renders
 
-When the site is using a posts-listing homepage instead of a static frontpage, `index.hbs` displays recent posts. You can also set a posts prefix in Publii to keep news separate from a page-based homepage. Post titles, featured images, excerpts, and article bodies remain editable in Publii.
+- **Business homepage** (`page-business-home.hbs`): editable page title, optional featured image, and all Block editor HTML. No hard-coded service or marketing copy.
+- **Default pages** (`page.hbs`): standard editable Publii pages, including featured image, author options, child pages, and custom HTML injection.
+- **Posts listing** (`index.hbs`): configurable editorial/news cards; use a posts prefix if the business homepage should be separate from the blog.
+- **Post page** (`post.hbs`): article metadata, featured image, author bio option, related/previous-next posts, and comments support.
+- **Shared shell** (`partials/navbar.hbs`, `partials/footer.hbs`): Publii logo, assigned menus, optional search input, CTA, contact details, footer code, and Publii cookie footer.
 
-## Theme structure
+## Logo note
 
-- `page.hbs` — editable page and selected static-frontpage layout.
-- `index.hbs` — editable Publii posts listing, with latest posts and pagination.
-- `post.hbs` — individual post layout.
-- `partials/navbar.hbs` / `partials/footer.hbs` — Publii-managed menus and configurable shared details.
-- `assets/css/main.css` — responsive business styling for Publii content and editor-generated blocks.
-- `assets/css/style.css` — stylesheet entry point loaded by Publii; imports `main.css`.
+Publii exposes a theme Basic Settings logo as `@website.logo`; the logo’s dimensions are in `@website.logoSize.width` and `.height`. Upload it in the theme’s Basic Settings (not just as a block image in the Home page). Both header and footer use this value.
 
-## If Publii reports that `assets/css/style.css` is missing
+## Theme assets
 
-The theme's `partials/head.hbs` loads `style.css` with Publii's `css` helper, so the stylesheet entry point must be present in the installed theme. If rendering reports `ENOENT` for this path, close the render, update/reinstall the Barlow Business theme so its `assets/css/style.css` is copied into Publii's `input/themes/<theme-name>/assets/css/` folder, and then render again. Do not change the path in `head.hbs` to `main.css`; Publii expects the `style.css` entry point.
+- `assets/css/style.css` is the stylesheet entry point loaded by Publii and imports `main.css`.
+- `assets/css/main.css` provides the responsive business visual system and styles Block editor content.
 
-## Theme development
-
-The theme retains Publii's standard templates, responsive image support, search/comments integrations, page and tag/author support, and custom HTML injection points. For developer details, see [Publii's theme documentation](https://getpublii.com/dev/).

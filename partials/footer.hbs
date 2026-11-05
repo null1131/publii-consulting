@@ -1,12 +1,19 @@
+<div class="business-contact-strip">
+    <div class="container business-contact-strip__inner">
+        {{#if @config.custom.contactEmail}}<a href="mailto:{{@config.custom.contactEmail}}">Email <strong>{{@config.custom.contactEmail}}</strong></a>{{/if}}
+        {{#if @config.custom.contactPhone}}<a href="tel:{{@config.custom.contactPhone}}">Call or text <strong>{{@config.custom.contactPhone}}</strong></a>{{/if}}
+        {{#if @config.custom.contactLocation}}<span>{{@config.custom.contactLocation}}</span>{{/if}}
+    </div>
+</div>
 <footer class="site-footer">
     <div class="container site-footer__inner">
         <div class="site-footer__brand">
             <a class="site-logo site-logo--footer" href="{{@website.url}}" aria-label="{{@website.name}} home">
                 {{#if @website.logo}}
-                    <img src="{{@website.logo}}" alt="{{@website.name}}" {{#if @website.logoSize.width}}width="{{@website.logoSize.width}}"{{/if}} {{#if @website.logoSize.height}}height="{{@website.logoSize.height}}"{{/if}}>
+                    <img src="{{@website.logo}}" alt="{{@website.name}}" width="{{@website.logoSize.width}}" height="{{@website.logoSize.height}}">
                 {{else}}
                     <span class="site-logo__mark" aria-hidden="true">B</span>
-                    <span class="site-logo__text"><strong>{{@website.name}}</strong><small>Business &amp; consulting</small></span>
+                    <span class="site-logo__text"><strong>BARLOW</strong><small>CONSULTING</small></span>
                 {{/if}}
             </a>
             {{#if @config.custom.footerNote}}<p class="site-footer__note">{{@config.custom.footerNote}}</p>{{/if}}
